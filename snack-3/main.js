@@ -4,21 +4,34 @@
 
 var newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function elementsBetween(start, end, arr) {
-    const result = arr.filter((element, index) => {
-        if(index >= start && index <= end) {
-            return true;
-        }
-    });
-    return result; 
-}
-
-// const elementsBetween = (start, end, arr) => {
-//     arr.filter((element, index) => {
-//         if(index >= start) {
+// function elementsBetween(start, end, arr) {
+//     const result = arr.filter((element, index) => {
+//         if(index >= start && index <= end) {
 //             return true;
 //         }
-//     })
+//     });
+//     return result; 
+// }
+
+// const elementsBetween = (start, end, arr) => {
+//     let result = arr.filter((element, index) => {
+//         if(index >= start && index <= end) {
+//             return true;
+//         }
+//     });
+    
+//     return result;
 // };
 
-console.log(elementsBetween(1, 5, newArray));
+const elementsBetween = (start, end, arr) => {
+    let result = [];
+    arr.forEach((element, index) => {
+        if(index >= start && index <= end){
+            result.push(element);
+        }
+    });
+    
+    return result;
+}
+
+console.log(elementsBetween(3, 7, newArray));
